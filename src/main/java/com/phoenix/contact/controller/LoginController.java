@@ -3,13 +3,23 @@ package com.phoenix.contact.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
-	@GetMapping({"/", "login"})
-	public String login(@RequestParam(value = "name", defaultValue="Harshal", required = true) String name, Model model) {
-		model.addAttribute("name", name);
+	@GetMapping({"/login"})
+	public String showLoginForm() {
 		return "login";
+	}
+	@PostMapping("/login")
+	public String login(@RequestParam String username, @RequestParam String password, Model model) {
+		if("user".equals(username) && "password".equals(password)) {
+			model.addAttribute("username", username);
+			return "redirect:/home";
+		} else {
+			model.addAttribute("error", "Invalid username or password");
+			return "login";
+		}
 	}
 }
