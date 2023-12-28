@@ -9,5 +9,4 @@ public class JavaSpringBootJspContactManagementPortalApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JavaSpringBootJspContactManagementPortalApplication.class, args);
 	}
-
 }
