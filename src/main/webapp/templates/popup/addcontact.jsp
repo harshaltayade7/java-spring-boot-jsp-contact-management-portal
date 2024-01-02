@@ -27,7 +27,7 @@
                          </div>
                          <div class="form-group">
                              <label for="phoneNumber">Phone Number:</label>
-                             <input type="text" class="form-control" pattern="[0-9]{10,12}" id="phoneNumber" name="phoneNumber" required>
+                             <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
                          </div>
                          <div class="form-group modal-footer">
                               <input type="submit" class="btn btn-primary" value="Update Changes"/>
