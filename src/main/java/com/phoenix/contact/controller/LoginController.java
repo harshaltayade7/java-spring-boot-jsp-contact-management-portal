@@ -16,10 +16,16 @@ public class LoginController {
 	public String login(@RequestParam String username, @RequestParam String password, Model model) {
 		if("user".equals(username) && "password".equals(password)) {
 			model.addAttribute("username", username);
-			return "redirect:/home";
+			return "redirect:/contacts/list";
 		} else {
 			model.addAttribute("error", "Invalid username or password");
 			return "login";
 		}
+	}
+
+	@GetMapping("/logout")
+	public String logout(Model model) {
+		model.addAttribute("username", "");
+		return "login";
 	}
 }

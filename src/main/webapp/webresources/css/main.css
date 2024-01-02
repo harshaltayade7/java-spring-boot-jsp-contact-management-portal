@@ -1,5 +1,8 @@
 @charset "ISO-8859-1";
 
+body {
+    font-family: cursive;
+}
 .login-box {
     max-width: 400px;
     margin: auto;
@@ -18,4 +21,15 @@ float: right;
 table {
 font-family: system-ui;
 font-size: 18px
+}
+
+.modal-footer {
+    margin: 0;
+    padding: 0;
+    margin-top: 31px;
+       border: none;
+}
+
+.modal-header {
+    border: none;
 }

@@ -21,12 +21,12 @@
                             <td>${contact.email}</td>
                             <td>${contact.phoneNumber}</td>
                             <td>
-                                   <a class="btn fa fa-trash border" id="save"
-                                      onclick="updateEditMode(${true})"></a>
+                                   <a class="btn fa fa-edit border" id="update"
+                                       data-toggle="modal" data-target="#updateContact" onclick="handleOnClickEdit('${contact.id}', '${contact.firstName}', '${contact.lastName}', '${contact.company}', '${contact.email}', '${contact.phoneNumber}')"></a>
                             </td>
                             <td>
-                              <a class="btn fa fa-trash border" id="save"
-                                  onclick="deleteContact('${contact.id}')"></a>
+                              <a class="btn fa fa-trash border" id="delete"
+                                  href="/contacts/delete/${contact.id}"></a>
                             </td>
                         </tr>
                     </c:forEach>

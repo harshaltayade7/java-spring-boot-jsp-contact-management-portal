@@ -21,7 +21,7 @@ public class ContactService {
         return repository.findAll();
     }
 
-    public void createContact(ContactRequest contactRequest) {
+    public void addContact(ContactRequest contactRequest) {
         Contact contact = new Contact();
         contact.setFirstName(contactRequest.getFirstName());
         contact.setLastName(contactRequest.getLastName());
@@ -31,11 +31,23 @@ public class ContactService {
         contact.setFirstName(contactRequest.getFirstName());
         repository.save(contact);
     }
-    public String updateContact(String id) {
-        repository.deleteById(id);
+    public String updateContact(String id, ContactRequest contactRequest) {
+        Optional<Contact> existingContact = repository.findById(id);
+        if(existingContact.isPresent()) {
+            Contact contact = existingContact.get();
+            contact.setFirstName(contactRequest.getFirstName());
+            contact.setLastName(contactRequest.getLastName());
+            contact.setCompany(contactRequest.getCompany());
+            contact.setEmail(contactRequest.getEmail());
+            contact.setPhoneNumber(contactRequest.getPhoneNumber());
+            repository.save(contact);
+        } else {
+            return "Contact not found";
+        }
+
         return "Contact updated successfully";
     }
-    public String removeContact(String id) {
+    public String deleteContact(String id) {
         repository.deleteById(id);
         return "Contact deleted successfully";
     }
