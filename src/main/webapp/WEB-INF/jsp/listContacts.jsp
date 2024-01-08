@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/templates/includes/loadstatic.jsp" %>
+<%@ include file="/WEB-INF/includes/loadstatic.jsp" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <title>Contact Management</title>
 </head>
 <body>
     <div class="container mt-2">
       <h1 class="text-danger">Contact Management</h1>
+      <tags:messageTag message="Hello Harshal" />
       <div class="text-end mb-1 m-0 mw-100 btn-wrapper">
         <button class="btn btn-primary" data-toggle="modal" data-target="#addContact">
           Add New Contact
@@ -17,9 +19,9 @@
         </button>
       </div>
      <div>
-     <%@ include file="/templates/table/contacttable.jsp" %>
-     <%@ include file="/templates/popup/addcontact.jsp" %>
-     <%@ include file="/templates/popup/updatecontact.jsp" %>
+     <%@ include file="/WEB-INF/table/contacttable.jsp" %>
+     <%@ include file="/WEB-INF/popup/addcontact.jsp" %>
+     <%@ include file="/WEB-INF/popup/updatecontact.jsp" %>
  </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/templates/includes/loadstatic.jsp" %>
+<%@ include file="/WEB-INF/includes/loadstatic.jsp" %>
     <title>Login Page</title>
     <style>
         /* Custom styles can be added here */
